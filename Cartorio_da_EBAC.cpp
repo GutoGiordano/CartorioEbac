@@ -172,7 +172,8 @@ int main() //Função inicial do programa
 		printf("\tEscolha a opção desejada:\n\n");
 		printf("\t#1 - Registrar nomes\n");
 		printf("\t#2 - Consultar nomes\n");
-		printf("\t#3 - Deletar nomes\n\n");
+		printf("\t#3 - Deletar nomes\n");
+		printf("\t#4 - Sair do sistema\n\n");
 		printf("\tDigite o número <enter>:  "); //Acrescentei a palavra "número" e a função "enter" para sugerir ao user a tecla a apertar (UX)
 		//Fim do Menu - espaçamento por questões estéticas
 		
@@ -195,6 +196,14 @@ int main() //Função inicial do programa
 			deletar(); //Chama as funções. Deleta cadastros
 			break;
 			
+			case 4: //Logoff do sistema
+			printf("\n\n"); 
+			printf("======> Cartório da EBAC\n");
+			printf("        Sistema de Registo de Pessoas\n\n");
+			printf("# Obrigado por utilizar nosso sistema!\n\n\n"); 
+			return 0; //Comando onde digo para o computador que estamos saindo do sistema
+			break;
+			
 			default: //Resposta de opção de menu inválida
 			
 			//cabeçalho inicio
@@ -206,7 +215,7 @@ int main() //Função inicial do programa
 			printf("\n");
 			printf(" # Opção inválida!");
 			printf("\n");
-			printf("   Escolha entre as opções 1, 2 ou 3.\n\n\n");
+			printf("   Escolha entre as opções 1, 2, 3 ou 4.\n\n\n");
 			system("pause");
 			break;
 		}
