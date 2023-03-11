@@ -151,75 +151,96 @@ int deletar() //Função para deletar os nomes
 
 	
 int main() //Função inicial do programa
-{
+	{
 	int opcao=0; //Definindo variáveis e a alocação de memória
 	int lopping=1; //Repetição do menu
+	char senhadigitada[]="a";
+	int comparacao;
+		
+	setlocale(LC_ALL, "Portuguese"); //Definindo a liguagem
+			
+	printf("\n\n"); //Cabeçalho
+	printf("======> Cartório da EBAC\n");
+	printf("        Sistema de Registo de Pessoas\n\n");
+	printf("        Loguin de Administrador!\n\n");
+	printf("      # Digite a sua senha: ");
+	scanf("%s",senhadigitada);
 	
-	for(lopping=1;lopping=1;) //dei o nome de looping para eu poder entender melhor
+	comparacao = strcmp(senhadigitada, "admin");
+			
+	if(comparacao == 0)		
 	{
-	
-		system("cls"); //comando que limpa a tela
-	
-		setlocale(LC_ALL, "Portuguese"); //Definindo a liguagem
 		
-		//cabeçalho inicio
-		printf("\n\n");
-		printf("======> Cartório da EBAC\n");
-		printf("        Sistema de Registo de Pessoas\n\n");
-		//cabeçalho inicio
-		
-		//Início do Menu
-		printf("\tEscolha a opção desejada:\n\n");
-		printf("\t#1 - Registrar nomes\n");
-		printf("\t#2 - Consultar nomes\n");
-		printf("\t#3 - Deletar nomes\n");
-		printf("\t#4 - Sair do sistema\n\n");
-		printf("\tDigite o número <enter>:  "); //Acrescentei a palavra "número" e a função "enter" para sugerir ao user a tecla a apertar (UX)
-		//Fim do Menu - espaçamento por questões estéticas
-		
-		scanf("%d", &opcao); //Armazenando as escolhas do user - (d) armazena a variável inteira
-		
-		system("cls"); //comando que limpa a tela
-		
-		
-		switch(opcao) //início da interação com o user
+		for(lopping=1;lopping=1;) //dei o nome de looping para eu poder entender melhor
 		{
-			case 1:
-			registro(); //Chama as funções. Registro de user
-			break; //Fim de case
-			
-			case 2:
-			consulta(); //Chama as funções. Consulta de cadastros
-			break;
-			
-			case 3:
-			deletar(); //Chama as funções. Deleta cadastros
-			break;
-			
-			case 4: //Logoff do sistema
-			printf("\n\n"); 
-			printf("======> Cartório da EBAC\n");
-			printf("        Sistema de Registo de Pessoas\n\n");
-			printf("# Obrigado por utilizar nosso sistema!\n\n\n"); 
-			return 0; //Comando onde digo para o computador que estamos saindo do sistema
-			break;
-			
-			default: //Resposta de opção de menu inválida
+		
+			system("cls"); //comando que limpa a tela
+		
+			setlocale(LC_ALL, "Portuguese"); //Definindo a liguagem
 			
 			//cabeçalho inicio
-			printf("\n\n"); 
+			printf("\n\n");
 			printf("======> Cartório da EBAC\n");
 			printf("        Sistema de Registo de Pessoas\n\n");
-			//cabeçalho fim
+			//cabeçalho inicio
 			
-			printf("\n");
-			printf(" # Opção inválida!");
-			printf("\n");
-			printf("   Escolha entre as opções 1, 2, 3 ou 4.\n\n\n");
-			system("pause");
-			break;
-		}
-	} //Fim da interação com user
+			//Início do Menu
+			printf("\tEscolha a opção desejada:\n\n");
+			printf("\t#1 - Registrar nomes\n");
+			printf("\t#2 - Consultar nomes\n");
+			printf("\t#3 - Deletar nomes\n");
+			printf("\t#4 - Sair do sistema\n\n");
+			printf("\tDigite o número <enter>:  "); //Acrescentei a palavra "número" e a função "enter" para sugerir ao user a tecla a apertar (UX)
+			//Fim do Menu - espaçamento por questões estéticas
+			
+			scanf("%d", &opcao); //Armazenando as escolhas do user - (d) armazena a variável inteira
+			
+			system("cls"); //comando que limpa a tela
+			
+			
+			switch(opcao) //início da interação com o user
+			{
+				case 1:
+				registro(); //Chama as funções. Registro de user
+				break; //Fim de case
+				
+				case 2:
+				consulta(); //Chama as funções. Consulta de cadastros
+				break;
+				
+				case 3:
+				deletar(); //Chama as funções. Deleta cadastros
+				break;
+				
+				case 4: //Logoff do sistema
+				printf("\n\n"); 
+				printf("======> Cartório da EBAC\n");
+				printf("        Sistema de Registo de Pessoas\n\n");
+				printf("# Obrigado por utilizar nosso sistema!\n\n\n"); 
+				return 0; //Comando onde digo para o computador que estamos saindo do sistema
+				break;
+				
+				default: //Resposta de opção de menu inválida
+				
+				//cabeçalho inicio
+				printf("\n\n"); 
+				printf("======> Cartório da EBAC\n");
+				printf("        Sistema de Registo de Pessoas\n\n");
+				//cabeçalho fim
+				
+				printf("\n");
+				printf(" # Opção inválida!");
+				printf("\n");
+				printf("   Escolha entre as opções 1, 2, 3 ou 4.\n\n\n");
+				system("pause");
+				break;
+			}
+		} 
+	} //Fim da interação com user	
+	
+	else
+		printf("\n");
+		printf("      > Senha incorreta!");
 
 
 //rodapé
